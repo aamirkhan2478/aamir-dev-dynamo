@@ -13,4 +13,44 @@ body {
   overflow-x: hidden;
   scroll-behavior: smooth;
 }
+.about-content {
+  max-width: calc(100% - 187px);
+}
+.about-section hr {
+  max-width: calc(100% - 50px);
+}
 
+.frameworks-list {
+  list-style: square inside url("../public/square.png");
+}
+
+.language-list {
+  list-style: square inside url("../public/rotated-square.png");
+}
+.skills-list {
+  list-style: disc inside url("../public/disc.png");
+}
+@media (min-width: 768px) {
+  .card:hover {
+    cursor: pointer;
+    background: none;
+  }
+
+  .card:hover button {
+    visibility: visible;
+    height: auto;
+  }
+
+  .card:hover .card-info {
+    visibility: hidden;
+  }
+}
+
+@media (min-width: 1024px) {
+  .about-section hr {
+    max-width: calc(100% - 300px);
+  }
+  .about-list {
+    max-width: calc(100% - 61px);
+  }
+}

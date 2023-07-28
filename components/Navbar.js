@@ -23,6 +23,7 @@ const Navbar = () => {
           section.offsetTop + section.offsetHeight > currentPosition
         ) {
           navLinks.forEach((link) => {
+            link.classList.add("text-white", "hover:text-orangeColor");
             link.classList.remove(
               "text-orangeColor",
               "hover:text-white",
@@ -36,10 +37,10 @@ const Navbar = () => {
               section.getAttribute("id") ===
               link.getAttribute("href").substring(1)
             ) {
+              link.classList.remove("text-white", "hover:text-orangeColor");
               link.classList.add(
                 "text-orangeColor",
                 "hover:text-white",
-                "duration-500",
                 "border-orangeColor",
                 "border-dashed",
                 "border-b"

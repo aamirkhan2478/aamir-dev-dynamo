@@ -25,7 +25,7 @@ const Hero = () => {
   return (
     <section className='bg-blackColor w-full h-[590px] flex flex-col justify-center gap-[12px] lg:h-[870px]'>
       <div className='intro-portion mt-[100px] lg:flex lg:flex-col lg:ml-[87px] lg:mb-10 lg:absolute'>
-        <h1 className='main-heading font-crete max-w-[327px] max-h-[188px] not-italic font-[400] text-6xl text-orangeColor ml-5 mr-5 tracking-[0.37px] leading-[64px] lg:max-w-[407px] lg:text-7xl lg:leading-[82px]'>
+        <h1 className='main-heading font-crete max-w-[327px] max-h-[188px] not-italic font-[400] text-[56px] text-orangeColor ml-5 mr-5 tracking-[0.37px] leading-[64px] lg:max-w-[407px] lg:text-7xl lg:leading-[82px]'>
           Hey There. I&apos;m Aamir
         </h1>
         <h3 className='supporting-text  font-roboto max-w-[327px] max-h-[70px] text-2xl text-white ml-5 mr-5 font-bold not-italic lg:font-inter lg:max-w-[501px] lg:font-[500] lg:text-3xl lg:mt-3'>

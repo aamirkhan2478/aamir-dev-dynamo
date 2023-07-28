@@ -20,11 +20,6 @@ module.exports = {
         poppins: ["Poppins", "sans-serif"],
         lato: ["Lato", "sans-serif"],
       },
-      backgroundImage: {
-        profile: "url('/public/profile-pic.jpg')",
-        mainImage: "url('/public/main-image.svg')",
-        mainImageDesktop: "url('/public/main-image-desktop.png')",
-      },
     },
   },
   plugins: [],
