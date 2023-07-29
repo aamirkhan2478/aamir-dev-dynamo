@@ -20,6 +20,16 @@ body {
   max-width: calc(100% - 50px);
 }
 
+.grid-items {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+}
+
+.work-main-heading {
+  grid-row: 1/2;
+  align-self: flex-end;
+}
 .frameworks-list {
   list-style: square inside url("../public/square.png");
 }
@@ -30,6 +40,46 @@ body {
 .skills-list {
   list-style: disc inside url("../public/disc.png");
 }
+
+.modal {
+  animation-name: modalanimation;
+  animation-duration: 1s;
+}
+
+@-webkit-keyframes modalanimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modalanimation {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  background-color: #eaeaea;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ff6b00;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
 @media (min-width: 768px) {
   .card:hover {
     cursor: pointer;
@@ -44,13 +94,76 @@ body {
   .card:hover .card-info {
     visibility: hidden;
   }
+
+  .grid-items {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "heading divider"
+      "main main"
+      "card1 card2";
+    justify-content: center;
+  }
+  .work-main-heading {
+    align-self: center;
+    grid-area: heading;
+  }
+
+  .divider {
+    width: 400px;
+    max-width: calc(100% - 18px);
+    grid-area: divider;
+  }
+
+  .main-card {
+    grid-area: main;
+  }
+
+  .post-image {
+    align-self: normal;
+  }
 }
 
 @media (min-width: 1024px) {
+  .grid-items {
+    grid-template-rows: repeat(1, 1fr);
+    grid-template-columns: 350px 300px 350px;
+    grid-template-areas:
+      "heading divider divider"
+      "main main main"
+      "card1 card2 card3";
+    grid-column-gap: 17px;
+    margin-top: 80px;
+  }
+
+  .work-main-heading {
+    grid-area: heading;
+  }
+  .divider {
+    width: 632px;
+    grid-area: divider;
+  }
+
+  .main-card {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-left: -31px;
+    grid-area: main;
+  }
+
+  .card {
+    align-self: flex-start;
+    justify-self: center;
+  }
   .about-section hr {
     max-width: calc(100% - 300px);
   }
   .about-list {
     max-width: calc(100% - 61px);
+  }
+
+  .modal {
+    max-width: calc(100% - 20px);
   }
 }
