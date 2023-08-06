@@ -1,10 +1,10 @@
 import { NextResponse as res } from "next/server";
-import { connectToDatabase } from "@/utils/mongodb";
+import clientPromise from "@/utils/mongodb";
 import { sign } from "jsonwebtoken";
 import { compare } from "bcryptjs";
 
 export async function POST(req) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const body = await req.json();
   const { email, password } = body;
   const collection = client.db("Portfolio").collection("Users");

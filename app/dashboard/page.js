@@ -1,12 +1,16 @@
 "use client";
 import Layout from "@/components/Layout";
-import { Menu } from "@mui/icons-material";
-import React, { useState } from "react";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
+import React from "react";
 const Dashboard = () => {
-    
-  return (
-    <Layout>Dashboard</Layout>
-  );
+  // const { data: session } = useSession({
+  //   required: true,
+  //   onUnauthenticated() {
+  //     redirect("/auth/login?callbackUrl=/dashboard");
+  //   },
+  // });
+  return <Layout>Dashboard</Layout>;
 };
 
 export default Dashboard;

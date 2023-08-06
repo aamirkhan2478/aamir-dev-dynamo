@@ -1,9 +1,9 @@
 import { NextResponse as res } from "next/server";
-import { connectToDatabase } from "@/utils/mongodb";
+import clientPromise from "@/utils/mongodb";
 import { ObjectId } from "mongodb";
 
 export async function GET(_req, { params }) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const collection = client.db("Portfolio").collection("Projects");
   const { id } = params;
 
@@ -22,7 +22,7 @@ export async function GET(_req, { params }) {
 }
 
 export async function DELETE(_req, { params }) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const collection = client.db("Portfolio").collection("Projects");
   const { id } = params;
 
@@ -41,7 +41,7 @@ export async function DELETE(_req, { params }) {
 }
 
 export async function PUT(req, { params }) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const body = await req.json();
   const { name, description, pic, languages, live, source } = body;
   const collection = client.db("Portfolio").collection("Projects");

@@ -1,3 +1,4 @@
+"use client"
 import { ArrowBackIos, Dashboard, Home, Logout } from "@mui/icons-material";
 import classNames from "classnames";
 import Image from "next/image";
@@ -5,6 +6,7 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import React, { useState, useMemo } from "react";
 import logo from "@/public/dashboard-logo.jpg";
+import { signOut } from "next-auth/react";
 
 const menuItems = [
   { id: 1, label: "Dashboard", icon: Dashboard, link: "/dashboard" },
@@ -161,6 +163,7 @@ const Sidebar = () => {
         className={`bg-red-500 text-white flex px-3 py-4 ${
           toggleCollapse ? "rounded-lg" : "rounded"
         } cursor-pointer hover:bg-red-400 active:bg-red-500`}
+        onClick={() => signOut()}
       >
         <div style={{ width: "2.5rem" }}>
           <Logout />

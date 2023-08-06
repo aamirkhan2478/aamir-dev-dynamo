@@ -1,9 +1,9 @@
 import { NextResponse as res } from "next/server";
-import { connectToDatabase } from "@/utils/mongodb";
+import clientPromise from "@/utils/mongodb";
 import moment from "moment";
 
 export async function POST(req) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const body = await req.json();
   const { name, description, pic, languages, live, source } = body;
   if (!name || !description || !pic || !languages || !live || !source) {
@@ -30,7 +30,7 @@ export async function POST(req) {
 }
 
 export async function GET(_req) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const collection = client.db("Portfolio").collection("Projects");
   try {
     const projects = await collection.find().toArray();

@@ -1,9 +1,9 @@
 import { NextResponse as res } from "next/server";
-import { connectToDatabase } from "@/utils/mongodb";
+import clientPromise from "@/utils/mongodb";
 import moment from "moment";
 
 export async function POST(req) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const body = await req.json();
   const { name } = body;
   if (!name) {
@@ -25,7 +25,7 @@ export async function POST(req) {
 }
 
 export async function GET(_req) {
-  const client = await connectToDatabase();
+  const client = await clientPromise;
   const collection = client.db("Portfolio").collection("Frameworks");
   try {
     const frameworks = await collection.find().toArray();
