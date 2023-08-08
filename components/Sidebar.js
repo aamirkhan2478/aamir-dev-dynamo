@@ -97,10 +97,6 @@ const Sidebar = () => {
     );
   };
 
-  const onMouseOver = () => {
-    setIsCollapsible(!isCollapsible);
-  };
-
   const handleSidebarToggle = () => {
     setToggleCollapse(!toggleCollapse);
   };

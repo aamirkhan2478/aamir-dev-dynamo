@@ -5,7 +5,7 @@ import moment from "moment";
 export async function POST(req) {
   const client = await clientPromise;
   const body = await req.json();
-  const { name, description, pic, languages, live, source } = body;
+  const { name, description, pic, languages, live, source, isLive, isSource } = body;
   if (!name || !description || !pic || !languages || !live || !source) {
     return res.json({ error: "Please fill all required fields!", status: 400 });
   }
@@ -19,6 +19,8 @@ export async function POST(req) {
       languages,
       live,
       source,
+      isLive,
+      isSource,
       createdAt: moment().format(),
       lastModified: moment().format(),
     });

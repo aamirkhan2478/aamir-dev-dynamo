@@ -11,6 +11,8 @@ const Modal = ({
   desc,
   source,
   live,
+  isSource,
+  isLive,
   isOpen,
   setIsOpen,
 }) => {
@@ -45,44 +47,50 @@ const Modal = ({
             src={img}
             alt='modal image'
             className='w-[300px] h-[220px] lg:w-[503px] lg:h-[356px] lg:mt-[30px]'
+            width={300}
+            height={220}
           />
           <p className='title w-auto h-[126px] font-inter not-italic font-[400] text-[16px] leading-[24px] mt-[10px] lg:leading-[29px] lg:ml-[20px] lg:mt-[28px]'>
             {desc}
           </p>
         </div>
         <div className='buttons mt-[200px] flex w-[314px] lg:ml-[519px] lg:mb-[-18px] lg:relative lg:h-[59px] lg:bottom-[117px] lg:mt-[74px] lg:flex-none'>
-          <a
-            href={live}
-            className='btn-primary m-[4px] lg:m-[3px] bg-orangeColor font-inter max-w-full font-bold text-[16px] leading-[24px] text-white border border-solid flex gap-3 border-orangeColor p-3 cursor-pointer transition-all ease-in-out mr-5 duration-[0.5s] hover:bg-[#fff5e1] hover:border hover:border-solid hover:border-orangeColor hover:text-orangeColor hover:rounded-full active:bg-orangeColor active:font-inter active:font-normal active:text-base active:text-orangeColor'
-            target='_blank'
-            rel='noreferrer'
-          >
-            See Live
-            <span>
-              <Image
-                src={iconExport}
-                alt='live-icon'
-                className='icon-right bg-orangeColor rounded-[20px]'
-                height='18'
-              />
-            </span>
-          </a>
-          <a
-            href={source}
-            className='btn-primary m-[4px] lg:m-[3px] bg-orangeColor font-inter max-w-full font-bold text-base text-white border border-solid flex gap-3 border-orangeColor p-[12px] cursor-pointer transition-all ease-in-out mr-5 duration-[0.5s] hover:bg-[#fff5e1] hover:border hover:border-solid hover:border-orangeColor hover:text-orangeColor hover:rounded-full active:bg-orangeColor active:font-inter active:font-normal active:text-base active:text-orangeColor'
-            target='_blank'
-            rel='noreferrer'
-          >
-            See Source
-            <span>
-              <Image
-                src={iconGitHub}
-                alt='live-icon'
-                className='icon-right bg-orangeColor rounded-[20px]'
-                height='18'
-              />
-            </span>
-          </a>
+          {isLive && (
+            <a
+              href={live}
+              className='btn-primary m-[4px] lg:m-[3px] bg-orangeColor font-inter max-w-full font-bold text-[16px] leading-[24px] text-white border border-solid flex gap-3 border-orangeColor p-3 cursor-pointer transition-all ease-in-out mr-5 duration-[0.5s] hover:bg-[#fff5e1] hover:border hover:border-solid hover:border-orangeColor hover:text-orangeColor hover:rounded-full active:bg-orangeColor active:font-inter active:font-normal active:text-base active:text-orangeColor'
+              target='_blank'
+              rel='noreferrer'
+            >
+              See Live
+              <span>
+                <Image
+                  src={iconExport}
+                  alt='live-icon'
+                  className='icon-right bg-orangeColor rounded-[20px]'
+                  height='18'
+                />
+              </span>
+            </a>
+          )}
+          {isSource && (
+            <a
+              href={source}
+              className='btn-primary m-[4px] lg:m-[3px] bg-orangeColor font-inter max-w-full font-bold text-base text-white border border-solid flex gap-3 border-orangeColor p-[12px] cursor-pointer transition-all ease-in-out mr-5 duration-[0.5s] hover:bg-[#fff5e1] hover:border hover:border-solid hover:border-orangeColor hover:text-orangeColor hover:rounded-full active:bg-orangeColor active:font-inter active:font-normal active:text-base active:text-orangeColor'
+              target='_blank'
+              rel='noreferrer'
+            >
+              See Source
+              <span>
+                <Image
+                  src={iconGitHub}
+                  alt='live-icon'
+                  className='icon-right bg-orangeColor rounded-[20px]'
+                  height='18'
+                />
+              </span>
+            </a>
+          )}
         </div>
       </div>
     </div>
