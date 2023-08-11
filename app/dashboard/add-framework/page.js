@@ -1,10 +1,65 @@
-import Layout from '@/components/Layout'
-import React from 'react'
+import Layout from "@/components/Layout";
+import Loader from "@/components/Loader";
+import React, { useState } from "react";
+import { ToastContainer } from "react-toastify";
 
 const AddFramework = () => {
+  const [name, setName] = useState("");
+  const loading = false;
+  const submitHandler = () => {};
   return (
-    <Layout>AddFramework</Layout>
-  )
-}
+    <Layout>
+      <ToastContainer
+        position='top-center'
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+        theme='dark'
+      />
+      <div className='flex flex-col items-center justify-center px-6 py-8 mx-auto'>
+        <div className='w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-darkColor dark:border-gray-700'>
+          <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
+            <h1 className='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white'>
+              Add Project
+            </h1>
+            <form className='space-y-4 md:space-y-6' onSubmit={submitHandler}>
+              <div class='relative'>
+                <input
+                  type='text'
+                  id='project-name'
+                  class='block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orangeColor focus:outline-none focus:ring-0 focus:border-orangeColor peer'
+                  placeholder=' '
+                  onChange={(e) => setName(e.target.value)}
+                  value={name}
+                  name='name'
+                />
+                <label
+                  for='project-name'
+                  class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
+                    peer-focus:dark:bg-darkColor
+                    peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
+                >
+                  Project Name
+                </label>
+              </div>
 
-export default AddFramework
+              <button
+                type='submit'
+                className='w-full bg-orangeColor font-inter justify-center font-normal text-base text-white border border-solid flex gap-3 border-orangeColor p-3 cursor-pointer transition-all ease-in-out mr-5 duration-[0.5s] hover:bg-[#fff5e1] hover:border hover:border-solid hover:border-orangeColor hover:text-orangeColor hover:rounded-full active:bg-orangeColor active:font-inter active:font-normal active:text-base active:text-orangeColor'
+              >
+                {loading ? <Loader /> : "Add framework"}
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default AddFramework;

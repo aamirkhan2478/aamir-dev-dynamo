@@ -307,7 +307,7 @@ const AddProject = () => {
                 type='submit'
                 className='w-full bg-orangeColor font-inter justify-center font-normal text-base text-white border border-solid flex gap-3 border-orangeColor p-3 cursor-pointer transition-all ease-in-out mr-5 duration-[0.5s] hover:bg-[#fff5e1] hover:border hover:border-solid hover:border-orangeColor hover:text-orangeColor hover:rounded-full active:bg-orangeColor active:font-inter active:font-normal active:text-base active:text-orangeColor'
               >
-                {loading ? <Loader /> : "Sign in"}
+                {loading ? <Loader /> : "Add Project"}
               </button>
             </form>
           </div>

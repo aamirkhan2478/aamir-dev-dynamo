@@ -8,7 +8,7 @@ const PopUp = ({ isOpen, setIsOpen, message, btnColor, onClick }) => {
         tabIndex={-1}
         className={`fixed top-0 left-0 right-0 z-50 ${
           isOpen ? "block" : "hidden"
-        } p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full mx-[600px]`}
+        } p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full`}
       >
         <div className='relative w-full max-w-md max-h-full'>
           <div className='relative bg-white rounded-lg shadow dark:bg-gray-700'>
@@ -56,7 +56,7 @@ const PopUp = ({ isOpen, setIsOpen, message, btnColor, onClick }) => {
               <button
                 data-modal-hide='popup-modal'
                 type='button'
-                className={`text-white bg-${btnColor}-600 hover:bg-${btnColor}-800 focus:ring-4 focus:outline-none focus:ring-${btnColor}-300 dark:focus:ring-${btnColor}-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
+                className={`text-white bg-red-600 hover:bg-${btnColor}-800 focus:ring-4 focus:outline-none focus:ring-${btnColor}-300 dark:focus:ring-${btnColor}-800 font-medium rounded-lg text-sm inline-flex items-center px-5 py-2.5 text-center mr-2`}
                 onClick={onClick}
               >
                 Yes, I&apos;m sure

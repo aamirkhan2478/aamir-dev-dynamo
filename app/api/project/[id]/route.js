@@ -43,7 +43,8 @@ export async function DELETE(_req, { params }) {
 export async function PUT(req, { params }) {
   const client = await clientPromise;
   const body = await req.json();
-  const { name, description, pic, languages, live, source } = body;
+  const { name, description, pic, languages, live, source, isLive, isSource } =
+    body;
   const collection = client.db("Portfolio").collection("Projects");
   const { id } = params;
 
@@ -53,7 +54,16 @@ export async function PUT(req, { params }) {
       await collection.findOneAndUpdate(
         { _id: objectId },
         {
-          $set: { name, description, pic, languages, live, source },
+          $set: {
+            name,
+            description,
+            pic,
+            languages,
+            live,
+            source,
+            isLive,
+            isSource,
+          },
           $currentDate: { lastModified: true },
         }
       );

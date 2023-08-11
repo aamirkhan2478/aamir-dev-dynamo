@@ -40,8 +40,8 @@ const Work = () => {
                 role='status'
                 className='main-card animate-pulse mt-[-90px] md:flex md:items-center'
               >
-                <div className='image flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700 mt-[140px] md:mr-[20px] md:w-[390px] md:h-[207px] lg:w-[500px] lg:h-[220px] ' />
-                <div className='main-card-content md:mt-[130px] md:flex md:flex-col md:justify-center'>
+                <div className='image flex items-center justify-center w-full h-48 bg-gray-300 rounded sm:w-96 dark:bg-gray-700 mt-[140px] md:mr-[20px] md:w-[390px] md:h-[207px] lg:w-[612px] lg:h-[293px] ' />
+                <div className='main-card-content md:mt-[52px] md:flex md:flex-col md:justify-center'>
                   <div className='work-title-post h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-48 max-w-[250px] min-w-[325px] mt-[24px] mb-[15px]' />
                   <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
                   <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
@@ -54,90 +54,19 @@ const Work = () => {
                   <div className='h-10 bg-gray-200 dark:bg-gray-700 max-w-[100px] mb-2.5' />
                 </div>
               </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
-              <div className='card animate-pulse bg-blackColor max-w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:max-w-[324px] flex flex-col justify-center'>
-                <div className='image w-full h-full object-cover' />
-                <div className='h-2.5 bg-gray-200 rounded-full dark:bg-gray-700 w-7 min-w-[325px] mt-[24px] max-w-[285px] mb-[19px]' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-                <div className='h-2 bg-gray-200 rounded-full dark:bg-gray-700 max-w-[480px] mb-2.5' />
-              </div>
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px] ' />
+
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px] ' />
+
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px] ' />
+
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px] ' />
+
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px] ' />
+
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px] ' />
+
+              <div className='card animate-pulse bg-gray-700 w-[324px] h-[386px] mt-[10px] mb-[20px] overflow-hidden rounded-[10px] shadow-md md:w-[324px]' />
             </>
           ) : (
             <div className='main-card flex flex-col mt-[-90px] md:justify-center md:items-center'>

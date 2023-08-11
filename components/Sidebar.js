@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { ArrowBackIos, Dashboard, Home, Logout } from "@mui/icons-material";
 import classNames from "classnames";
 import Image from "next/image";
@@ -61,8 +61,7 @@ const menuItems = [
 ];
 
 const Sidebar = () => {
-  const [toggleCollapse, setToggleCollapse] = useState(false);
-  const [isCollapsible, setIsCollapsible] = useState(false);
+  const [toggleCollapse, setToggleCollapse] = useState(true);
 
   const pathName = usePathname();
 
