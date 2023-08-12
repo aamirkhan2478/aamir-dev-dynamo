@@ -4,16 +4,16 @@ import { ObjectId } from "mongodb";
 
 export async function GET(_req, { params }) {
   const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Technologies");
+  const collection = client.db("Portfolio").collection("Skills");
   const { id } = params;
 
   try {
     if (ObjectId.isValid(id)) {
       const objectId = new ObjectId(id);
-      const technologies = await collection.findOne({ _id: objectId });
-      return res.json({ technologies, status: 200 });
+      const skill = await collection.findOne({ _id: objectId });
+      return res.json({ skill, status: 200 });
     } else {
-      return res.json({ error: "Technologies not found" });
+      return res.json({ error: "Skill not found" });
     }
   } catch (err) {
     console.log(err.message);
@@ -23,7 +23,7 @@ export async function GET(_req, { params }) {
 
 export async function DELETE(_req, { params }) {
   const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Technologies");
+  const collection = client.db("Portfolio").collection("Skills");
   const { id } = params;
 
   try {
@@ -31,11 +31,11 @@ export async function DELETE(_req, { params }) {
       const objectId = new ObjectId(id);
       await collection.findOneAndDelete({ _id: objectId });
       return res.json({
-        message: "Technologies deleted successfully",
+        message: "Skill deleted successfully",
         status: 200,
       });
     } else {
-      return res.json({ error: "Technologies not found" });
+      return res.json({ error: "Skill not found" });
     }
   } catch (err) {
     console.log(err.message);
@@ -46,8 +46,8 @@ export async function DELETE(_req, { params }) {
 export async function PUT(req, { params }) {
   const client = await clientPromise;
   const body = await req.json();
-  const { frameworks, languages, skill } = body;
-  const collection = client.db("Portfolio").collection("Technologies");
+  const { name } = body;
+  const collection = client.db("Portfolio").collection("Skills");
   const { id } = params;
 
   try {
@@ -56,16 +56,16 @@ export async function PUT(req, { params }) {
       await collection.findOneAndUpdate(
         { _id: objectId },
         {
-          $set: { frameworks, languages, skill },
+          $set: { name },
           $currentDate: { lastModified: true },
         }
       );
       return res.json({
-        message: "Technologies Updated successfully",
+        message: "Skill Updated successfully",
         status: 200,
       });
     } else {
-      return res.json({ error: "Technologies not found" });
+      return res.json({ error: "Skill not found" });
     }
   } catch (err) {
     console.log(err.message);
