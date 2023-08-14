@@ -32,7 +32,7 @@ const Modal = ({
             className='w-[25px] h-[30px] text-[#67798e] hover:cursor-pointer hover:text-red-600'
           />
         </div>
-        <ul className='modal-languages-list flex w-[322px] mt-[20px] mb-[10px]'>
+        <ul className='modal-languages-list flex mt-[20px] mb-[10px]'>
           {languages?.map((language, index) => (
             <li
               key={index}

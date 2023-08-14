@@ -1,72 +1,12 @@
+import { useShowFrameworks } from "@/hooks/useFramework";
+import { useShowLanguages } from "@/hooks/useLanguage";
+import { useShowSkills } from "@/hooks/useSkill";
 import React from "react";
 
 const About = () => {
-  // .about-flex {
-  //   height: 870px;
-  // }
-
-  // .about-content {
-  //   margin-left: 156px;
-  //   margin-bottom: 213px;
-  // }
-
-  // .about-heading {
-  //   line-height: 82px;
-  //   width: 565px;
-  // }
-
-  // .about-description {
-  //   font-size: 20px;
-  //   line-height: 32px;
-  //   width: 570px;
-  // }
-
-  // .about-section #btn-id {
-  //   width: 570px;
-  // }
-
-  // .image-container {
-  //   height: 100%;
-  //   width: 6200px;
-  //   align-items: center;
-  // }
-
-  // .about-image {
-  //   background-image: url("../public/about-desktop-image.svg");
-  //   width: 335.39px;
-  //   height: 490.38px;
-  //   margin-bottom: -181px;
-  // }
-
-  // .about-section hr {
-  //   width: 1558px;
-  //   max-width: calc(100% - 300px);
-  //   margin-top: -300px;
-  //   margin-left: 150px;
-  // }
-
-  // .about-list {
-  //   flex-direction: row;
-  //   align-items: baseline;
-  //   justify-content: space-evenly;
-  //   margin-top: 3px;
-  //   width: 1383px;
-  //   max-width: calc(100% - 61px);
-  //   padding-bottom: 0;
-  // }
-
-  // .language-list {
-  //   text-align: justify;
-  //   margin-bottom: 356px;
-  // }
-
-  // .frameworks-list {
-  //   text-align: justify;
-  // }
-
-  // .skills-list {
-  //   text-align: justify;
-  // }
+  const { data: frameworks, isLoading: frameworkLoading } = useShowFrameworks();
+  const { data: skills, isLoading: skillLoading } = useShowSkills();
+  const { data: languages, isLoading: languageLoading } = useShowLanguages();
   return (
     <section id='about' className='about-section bg-blackColor'>
       <div className='about-flex h-[1513px] mt-[120px] flex justify-between items-center content-center lg:h-[870px]'>
@@ -100,61 +40,94 @@ const About = () => {
         <li className='language-list not-italic font-bold text-[32px] leading-[114px] lg:text-justify'>
           Languages
           <ul>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Javascript
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Ruby
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Html
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Css
-            </li>
+            {languageLoading ? (
+              <>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+              </>
+            ) : (
+              languages?.map((language) => (
+                <li
+                  key={language?.name}
+                  className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'
+                >
+                  {language?.name}
+                </li>
+              ))
+            )}
           </ul>
         </li>
         <li className='frameworks-list not-italic font-bold text-[32px] leading-[114px] lg:text-justify lg:mb-[356px]'>
           Frameworks
           <ul>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Bootstrap
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Ruby on Rails
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              React Js
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Node Js
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Express Js
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Material UI
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Tailwind CSS
-            </li>
+            {frameworkLoading ? (
+              <>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+              </>
+            ) : (
+              frameworks?.map((framework) => (
+                <li
+                  key={framework?.name}
+                  className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'
+                >
+                  {framework?.name}
+                </li>
+              ))
+            )}
           </ul>
         </li>
         <li className='skills-list not-italic font-bold text-[32px] leading-[114px] lg:text-justify'>
           Skills
           <ul>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Codekit
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Github
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Codepen
-            </li>
-            <li className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'>
-              Terminal
-            </li>
+            {skillLoading ? (
+              <>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+                <div className='bg-darkColor h-3 w-[150px] animate-pulse rounded mb-5'></div>
+              </>
+            ) : (
+              skills?.map((skill) => (
+                <li
+                  key={skill?.name}
+                  className='list-style-none not-italic font-[400] text-[22px] leading-[43px]'
+                >
+                  {skill?.name}
+                </li>
+              ))
+            )}
           </ul>
         </li>
       </ul>

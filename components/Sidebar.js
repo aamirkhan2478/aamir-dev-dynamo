@@ -1,5 +1,18 @@
 "use client";
-import { ArrowBackIos, Dashboard, Home, Logout } from "@mui/icons-material";
+import {
+  AddBox,
+  AddRoad,
+  AddToQueue,
+  ArrowBackIos,
+  Dashboard,
+  Home,
+  Logout,
+  NoteAdd,
+  Plagiarism,
+  Policy,
+  Preview,
+  Visibility,
+} from "@mui/icons-material";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -13,49 +26,49 @@ const menuItems = [
   {
     id: 2,
     label: "Add Project",
-    icon: Home,
+    icon: AddToQueue,
     link: "/dashboard/add-project",
   },
   {
     id: 3,
     label: "Show Projects",
-    icon: Home,
+    icon: Preview,
     link: "/dashboard/show-projects",
   },
   {
     id: 4,
     label: "Add Skill",
-    icon: Home,
+    icon: AddRoad,
     link: "/dashboard/add-skill",
   },
   {
     id: 5,
     label: "Show Skills",
-    icon: Home,
+    icon: Policy,
     link: "/dashboard/show-skills",
   },
   {
     id: 6,
     label: "Add Framework",
-    icon: Home,
+    icon: NoteAdd,
     link: "/dashboard/add-framework",
   },
   {
     id: 7,
     label: "Show Frameworks",
-    icon: Home,
+    icon: Visibility,
     link: "/dashboard/show-frameworks",
   },
   {
     id: 8,
     label: "Add Language",
-    icon: Home,
+    icon: AddBox,
     link: "/dashboard/add-language",
   },
   {
     id: 9,
     label: "Show Languages",
-    icon: Home,
+    icon: Plagiarism,
     link: "/dashboard/show-languages",
   },
 ];

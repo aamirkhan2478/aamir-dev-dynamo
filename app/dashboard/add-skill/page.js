@@ -16,6 +16,7 @@ const AddSkill = () => {
     mutate(data);
   };
   function onSuccess(data) {
+    if (data?.data?.status === 400) return onError(data?.data?.error);
     toast.success(data?.data?.msg, {
       position: "top-center",
       autoClose: 5000,
@@ -29,7 +30,7 @@ const AddSkill = () => {
     setName("");
   }
   function onError(error) {
-    toast.error(error.response.data.error, {
+    toast.error(error, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
@@ -58,7 +59,7 @@ const AddSkill = () => {
         <div className='w-full rounded-lg shadow dark:border md:mt-0 sm:max-w-md xl:p-0 bg-darkColor dark:border-gray-700'>
           <div className='p-6 space-y-4 md:space-y-6 sm:p-8'>
             <h1 className='text-xl font-bold leading-tight tracking-tight text-gray-900 md:text-2xl dark:text-white'>
-              Add Project
+              Add Skill
             </h1>
             <form className='space-y-4 md:space-y-6' onSubmit={submitHandler}>
               <div class='relative'>

@@ -53,6 +53,7 @@ const AddProject = () => {
   };
 
   function onSuccess(data) {
+    if (data?.data?.status === 400) return onError(data?.data?.error);
     toast.success(data?.data?.msg, {
       position: "top-center",
       autoClose: 5000,
@@ -76,7 +77,7 @@ const AddProject = () => {
   }
 
   function onError(error) {
-    toast.error(error.response.data.error, {
+    toast.error(error, {
       position: "top-center",
       autoClose: 5000,
       hideProgressBar: false,
