@@ -5,6 +5,7 @@ import Provider from "@/components/Provider";
 import "react-toastify/dist/ReactToastify.css";
 import QueryProvider from "@/components/QueryProvider";
 import ReactQueryDev from "@/components/ReactQueryDev";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,9 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang='en'>
+      <head>
+        <Script src='https://smtpjs.com/v3/smtp.js'></Script>
+      </head>
       <QueryProvider>
         <Provider>
           <body className={inter.className}>{children}</body>

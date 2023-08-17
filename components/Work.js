@@ -1,6 +1,5 @@
 import Image from "next/image";
 import React, { useState } from "react";
-import profile from "@/public/Cardimage.png";
 import Modal from "./Modal";
 import { useShowProject, useShowProjects } from "@/hooks/useProject";
 
@@ -8,7 +7,7 @@ const Work = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [projectID, setProjectID] = useState("");
   const { data: projects, isLoading } = useShowProjects();
-  const { data: project } = useShowProject(projectID);
+  const { data: project, isLoading: loading } = useShowProject(projectID);
   const openModal = (id) => {
     setProjectID(id);
     setIsOpen(!isOpen);
@@ -27,6 +26,7 @@ const Work = () => {
         isSource={project?.data?.project?.isSource}
         isLive={project?.data?.project?.isLive}
         img={project?.data?.project?.pic}
+        loading={loading}
       />
       <section id='portfolio' className='work-section'>
         <div className='grid-items'>
