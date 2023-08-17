@@ -6,6 +6,7 @@ import "react-toastify/dist/ReactToastify.css";
 import QueryProvider from "@/components/QueryProvider";
 import ReactQueryDev from "@/components/ReactQueryDev";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayout({ children }) {
       <QueryProvider>
         <Provider>
           <body className={inter.className}>{children}</body>
+          <Analytics />
         </Provider>
         <ReactQueryDev />
       </QueryProvider>
