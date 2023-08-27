@@ -4,6 +4,7 @@ import {
   AddRoad,
   AddToQueue,
   ArrowBackIos,
+  ContactMail,
   Dashboard,
   Home,
   Logout,
@@ -70,6 +71,12 @@ const menuItems = [
     label: "Show Languages",
     icon: Plagiarism,
     link: "/dashboard/show-languages",
+  },
+  {
+    id: 9,
+    label: "Show Messages",
+    icon: ContactMail,
+    link: "/dashboard/show-messages",
   },
 ];
 
