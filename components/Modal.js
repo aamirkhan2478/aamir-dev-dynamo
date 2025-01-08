@@ -46,7 +46,7 @@ const Modal = ({
                   key={index}
                   className='font-inter not-italic font-[500] text-[15px] leading-[20px] text-blueColor border border-solid border-[#8993a4] mr-[5px] p-[5px]'
                 >
-                  {language}
+                  {language.toUpperCase()}
                 </li>
               ))}
             </ul>
