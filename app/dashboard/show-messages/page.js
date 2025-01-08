@@ -2,6 +2,7 @@
 import Layout from "@/components/Layout";
 import Loader from "@/components/Loader";
 import { useShowContacts } from "@/hooks/useContact";
+import moment from "moment";
 import React from "react";
 
 const ShowMessage = () => {
@@ -23,6 +24,9 @@ const ShowMessage = () => {
               </th>
               <th scope='col' className='px-6 py-3'>
                 Message
+              </th>
+               <th scope='col' className='px-6 py-3'>
+                Received At
               </th>
             </tr>
           </thead>
@@ -51,6 +55,11 @@ const ShowMessage = () => {
                     <td className='px-6 py-4'>
                       <div className='text-gray-900 dark:text-white'>
                         {contact.message}
+                      </div>
+                    </td>
+                    <td className='px-6 py-4'>
+                      <div className='text-gray-900 dark:text-white'>
+                        {moment(contact.createdAt).format("ll")}
                       </div>
                     </td>
                   </tr>
