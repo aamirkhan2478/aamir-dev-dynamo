@@ -1,74 +1,78 @@
 import { NextResponse as res } from "next/server";
-import clientPromise from "@/utils/mongodb";
+import connectDB from "@/utils/mongoose";
 import { ObjectId } from "mongodb";
+import Language from "@/models/Language";
 
 export async function GET(_req, { params }) {
-  const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Languages");
+  await connectDB();
   const { id } = params;
 
   try {
     if (ObjectId.isValid(id)) {
       const objectId = new ObjectId(id);
-      const language = await collection.findOne({ _id: objectId });
-      return res.json({ language, status: 200 });
+      const language = await Language.findOne({ _id: objectId });
+      return res.json({ language, status: 200 }, { status: 200 });
     } else {
-      return res.json({ error: "Language not found" });
+      return res.json({ error: "Language not found" }, { status: 400 });
     }
   } catch (err) {
     console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    return res.json({ error: "Server error", status: 500 }, { status: 500 });
   }
 }
 
 export async function DELETE(_req, { params }) {
-  const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Languages");
+  await connectDB();
   const { id } = params;
 
   try {
     if (ObjectId.isValid(id)) {
       const objectId = new ObjectId(id);
-      await collection.findOneAndDelete({ _id: objectId });
-      return res.json({
-        message: "Language deleted successfully",
-        status: 200,
-      });
+      await Language.findOneAndDelete({ _id: objectId });
+      return res.json(
+        {
+          message: "Language deleted successfully",
+          status: 200,
+        },
+        { status: 200 }
+      );
     } else {
-      return res.json({ error: "Language not found" });
+      return res.json({ error: "Language not found" }, { status: 400 });
     }
   } catch (err) {
     console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    return res.json({ error: "Server error", status: 500 }, { status: 500 });
   }
 }
 
 export async function PUT(req, { params }) {
-  const client = await clientPromise;
+  await connectDB();
   const body = await req.json();
   const { name } = body;
-  const collection = client.db("Portfolio").collection("Languages");
   const { id } = params;
 
   try {
     if (ObjectId.isValid(id)) {
       const objectId = new ObjectId(id);
-      await collection.findOneAndUpdate(
+      await Language.findOneAndUpdate(
         { _id: objectId },
         {
           $set: { name },
           $currentDate: { lastModified: true },
         }
       );
-      return res.json({
-        message: "Language Updated successfully",
-        status: 200,
-      });
+      return res.json(
+        {
+          message: "Language Updated successfully",
+          status: 200,
+        },
+        { status: 200 }
+      );
     } else {
-      return res.json({ error: "Language not found" });
+      return res.json({ error: "Language not found" }, { status: 400 });
     }
   } catch (err) {
     console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    return res.json({ error: "Server error", status: 500 }, { status: 500 });
   }
 }

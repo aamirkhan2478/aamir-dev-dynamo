@@ -1,12 +1,12 @@
 import "./globals.css";
 
 import { Inter } from "next/font/google";
-import Provider from "@/components/Provider";
 import "react-toastify/dist/ReactToastify.css";
 import QueryProvider from "@/components/QueryProvider";
 import ReactQueryDev from "@/components/ReactQueryDev";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/react";
+import { AuthProvider } from "@/context/authContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -18,16 +18,16 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <head>
-        <Script src='https://smtpjs.com/v3/smtp.js'></Script>
+        <Script src="https://smtpjs.com/v3/smtp.js"></Script>
       </head>
       <QueryProvider>
-        <Provider>
+        <AuthProvider>
           <body className={inter.className}>{children}</body>
           <Analytics />
-        </Provider>
-        <ReactQueryDev />
+          <ReactQueryDev />
+        </AuthProvider>
       </QueryProvider>
     </html>
   );

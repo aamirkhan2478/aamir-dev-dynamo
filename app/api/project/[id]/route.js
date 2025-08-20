@@ -1,78 +1,94 @@
-import { NextResponse as res } from "next/server";
-import clientPromise from "@/utils/mongodb";
-import { ObjectId } from "mongodb";
+import { NextResponse } from "next/server";
+import connectDB from "@/utils/mongoose";
+import Project from "@/models/Project";
+import mongoose from "mongoose";
 
 export async function GET(_req, { params }) {
-  const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Projects");
+  await connectDB();
   const { id } = params;
 
   try {
-    if (ObjectId.isValid(id)) {
-      const objectId = new ObjectId(id);
-      const project = await collection.findOne({ _id: objectId });
-      return res.json({ project, status: 200 });
-    } else {
-      return res.json({ error: "Project not found" });
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      const project = await Project.findById(id);
+      if (!project) {
+        return NextResponse.json(
+          { error: "Project not found" },
+          { status: 404 }
+        );
+      }
+      return NextResponse.json(project, { status: 200 });
     }
+    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   } catch (err) {
-    console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    console.error(err.message);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
 export async function DELETE(_req, { params }) {
-  const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Projects");
+  await connectDB();
   const { id } = params;
 
   try {
-    if (ObjectId.isValid(id)) {
-      const objectId = new ObjectId(id);
-      await collection.findOneAndDelete({ _id: objectId });
-      return res.json({ message: "Project deleted successfully", status: 200 });
-    } else {
-      return res.json({ error: "Project not found" });
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      const deletedProject = await Project.findByIdAndDelete(id);
+      if (!deletedProject) {
+        return NextResponse.json(
+          { error: "Project not found" },
+          { status: 404 }
+        );
+      }
+      return NextResponse.json(
+        { message: "Project deleted successfully" },
+        { status: 200 }
+      );
     }
+    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   } catch (err) {
-    console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    console.error(err.message);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
 export async function PUT(req, { params }) {
-  const client = await clientPromise;
-  const body = await req.json();
-  const { name, description, pic, languages, live, source, isLive, isSource } =
-    body;
-  const collection = client.db("Portfolio").collection("Projects");
+  await connectDB();
   const { id } = params;
+  const { name, description, pic, languages, live, source, isLive, isSource } =
+    await req.json();
 
   try {
-    if (ObjectId.isValid(id)) {
-      const objectId = new ObjectId(id);
-      await collection.findOneAndUpdate(
-        { _id: objectId },
+    if (mongoose.Types.ObjectId.isValid(id)) {
+      const updatedProject = await Project.findByIdAndUpdate(
+        id,
         {
-          $set: {
-            name,
-            description,
-            pic,
-            languages,
-            live,
-            source,
-            isLive,
-            isSource,
-          },
-          $currentDate: { lastModified: true },
-        }
+          name,
+          description,
+          pic,
+          languages,
+          live,
+          source,
+          isLive,
+          isSource,
+          lastModified: new Date(),
+        },
+        { new: true }
       );
-      return res.json({ message: "Project Updated successfully", status: 200 });
-    } else {
-      return res.json({ error: "Project not found" });
+
+      if (!updatedProject) {
+        return NextResponse.json(
+          { error: "Project not found" },
+          { status: 404 }
+        );
+      }
+
+      return NextResponse.json(
+        { message: "Project updated successfully" },
+        { status: 200 }
+      );
     }
+    return NextResponse.json({ error: "Invalid ID" }, { status: 400 });
   } catch (err) {
-    console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    console.error(err.message);
+    return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }

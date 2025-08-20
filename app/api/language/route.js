@@ -1,37 +1,43 @@
 import { NextResponse as res } from "next/server";
-import clientPromise from "@/utils/mongodb";
+import connectDB from "@/utils/mongoose";
 import moment from "moment";
+import Language from "@/models/Language";
 
 export async function POST(req) {
-  const client = await clientPromise;
+  await connectDB();
   const body = await req.json();
   const { name } = body;
   if (!name) {
-    return res.json({ error: "Please fill all required fields!", status: 400 });
+    return res.json(
+      { error: "Please fill all required fields!", status: 400 },
+      { status: 400 }
+    );
   }
-  const collection = client.db("Portfolio").collection("Languages");
 
   try {
-    await collection.insertOne({
+    await Language.insertOne({
       name,
       createdAt: moment().format(),
       lastModified: moment().format(),
     });
-    return res.json({ msg: "New Language Added Successfully", status: 201 });
+    return res.json(
+      { msg: "New Language Added Successfully", status: 201 },
+      { status: 201 }
+    );
   } catch (err) {
     console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    return res.json({ error: "Server error", status: 500 }, { status: 500 });
   }
 }
 
 export async function GET(_req) {
-  const client = await clientPromise;
-  const collection = client.db("Portfolio").collection("Languages");
+  await connectDB();
+
   try {
-    const languages = await collection.find().toArray();
-    return res.json({ languages, status: 200 });
+    const languages = await Language.find();
+    return res.json({ languages, status: 200 }, { status: 200 });
   } catch (err) {
     console.log(err.message);
-    return res.json({ error: "Server error", status: 500 });
+    return res.json({ error: "Server error", status: 500 }, { status: 500 });
   }
 }

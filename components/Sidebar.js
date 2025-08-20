@@ -6,7 +6,6 @@ import {
   ArrowBackIos,
   ContactMail,
   Dashboard,
-  Home,
   Logout,
   NoteAdd,
   Plagiarism,
@@ -20,7 +19,6 @@ import Link from "next/link";
 import { useRouter, usePathname } from "next/navigation";
 import React, { useState, useMemo } from "react";
 import logo from "@/public/dashboard-logo.jpg";
-import { signOut } from "next-auth/react";
 
 const menuItems = [
   { id: 1, label: "Dashboard", icon: Dashboard, link: "/dashboard" },
@@ -125,14 +123,14 @@ const Sidebar = () => {
       className={wrapperClasses}
       style={{ transition: "width 300ms cubic-bezier(0.2, 0, 0, 1) 0s" }}
     >
-      <div className='flex flex-col'>
-        <div className='flex items-center justify-between relative'>
+      <div className="flex flex-col">
+        <div className="flex items-center justify-between relative">
           <div
             className={classNames("flex items-center gap-4", {
               hidden: toggleCollapse,
             })}
           >
-            <Image src={logo} alt='logo' className='h-9 w-9' />
+            <Image src={logo} alt="logo" className="h-9 w-9" />
             <span
               className={classNames(
                 "mt-2 text-2xl font-medium text-[#ffffff]",
@@ -149,13 +147,13 @@ const Sidebar = () => {
           </button>
         </div>
 
-        <div className='flex flex-col items-start mt-14 mb-6'>
+        <div className="flex flex-col items-start mt-14 mb-6">
           {menuItems.map(({ icon: Icon, ...menu }, index) => {
             const classes = getNavItemClasses(menu);
             return (
               <div className={classes} key={index}>
                 <Link href={menu.link} legacyBehavior>
-                  <a className='flex py-4 px-3 items-center w-full h-full text-white'>
+                  <a className="flex py-4 px-3 items-center w-full h-full text-white">
                     <div style={{ width: "2.5rem" }}>
                       <Icon />
                     </div>
@@ -178,7 +176,6 @@ const Sidebar = () => {
         className={`bg-red-500 text-white flex px-3 py-4 ${
           toggleCollapse ? "rounded-lg" : "rounded"
         } cursor-pointer hover:bg-red-400 active:bg-red-500`}
-        onClick={() => signOut()}
       >
         <div style={{ width: "2.5rem" }}>
           <Logout />

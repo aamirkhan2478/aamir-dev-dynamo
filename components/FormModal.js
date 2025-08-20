@@ -144,30 +144,30 @@ const FormModal = ({ isOpen, setIsOpen, projectID }) => {
                       </button>
                     )}
                   </div>
-                  <div class='relative'>
+                  <div className='relative'>
                     <input
                       type='text'
                       id='project-name'
-                      class='block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orangeColor focus:outline-none focus:ring-0 focus:border-orangeColor peer'
+                      className='block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orangeColor focus:outline-none focus:ring-0 focus:border-orangeColor peer'
                       placeholder=' '
                       onChange={changeHandler}
                       value={project.name}
                       name='name'
                     />
                     <label
-                      for='project-name'
-                      class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
+                      htmlFor='project-name'
+                      className='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
                     peer-focus:dark:bg-darkColor
                     peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
                     >
                       Project Name
                     </label>
                   </div>
-                  <div class='relative'>
+                  <div className='relative'>
                     <textarea
                       type='text'
                       id='project-description'
-                      class='block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orangeColor focus:outline-none focus:ring-0 focus:border-orangeColor peer'
+                      className='block px-2.5 pb-2.5 pt-4 w-full text-sm text-gray-900 bg-transparent rounded-lg border border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-orangeColor focus:outline-none focus:ring-0 focus:border-orangeColor peer'
                       placeholder=' '
                       rows={10}
                       cols={10}
@@ -176,8 +176,8 @@ const FormModal = ({ isOpen, setIsOpen, projectID }) => {
                       name='description'
                     />
                     <label
-                      for='project-description'
-                      class='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
+                      htmlFor='project-description'
+                      className='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
                     peer-focus:dark:bg-darkColor
                     peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
                     >
@@ -197,7 +197,7 @@ const FormModal = ({ isOpen, setIsOpen, projectID }) => {
                       name='live'
                     />
                     <label
-                      for='live-link'
+                      htmlFor='live-link'
                       className='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
                     peer-focus:dark:bg-darkColor
                     peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'
@@ -216,7 +216,7 @@ const FormModal = ({ isOpen, setIsOpen, projectID }) => {
                       name='source'
                     />
                     <label
-                      for='source-code'
+                      htmlFor='source-code'
                       className='absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-4 scale-75 top-2 z-10 origin-[0] px-2 peer-focus:px-2 peer-focus:text-blue-600 peer-focus:dark:text-orangeColor 
                     peer-focus:dark:bg-darkColor
                     peer-placeholder-shown:scale-100 peer-placeholder-shown:-translate-y-1/2 peer-placeholder-shown:top-1/2 peer-focus:top-2 peer-focus:scale-75 peer-focus:-translate-y-4 left-1'

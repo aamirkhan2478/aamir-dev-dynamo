@@ -2,50 +2,51 @@ import { useMutation, useQuery, useQueryClient } from "react-query";
 import axiosInstance from "@/utils";
 import { toast } from "react-toastify";
 
-const projects = () => {
+const projects = async () => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  return axiosInstance.get("/api/project", config);
+  return await axiosInstance.get("/api/project", config);
 };
 
-const project = ({ queryKey }) => {
+const project = async ({ queryKey }) => {
   const id = queryKey[1];
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  return axiosInstance.get(`/api/project/${id}`, config);
+  const response = await axiosInstance.get(`/api/project/${id}`, config);
+  return response.data;
 };
 
-const addProject = (project) => {
+const addProject = async (project) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  return axiosInstance.post("/api/project", project, config);
+  return await axiosInstance.post("/api/project", project, config);
 };
 
-const updateProject = ({ id, project }) => {
+const updateProject = async ({ id, project }) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  return axiosInstance.put(`/api/project/${id}`, project, config);
+  return await axiosInstance.put(`/api/project/${id}`, project, config);
 };
 
-const deleteProject = (id) => {
+const deleteProject = async (id) => {
   const config = {
     headers: {
       "Content-Type": "application/json",
     },
   };
-  return axiosInstance.delete(`/api/project/${id}`, config);
+  return await axiosInstance.delete(`/api/project/${id}`, config);
 };
 
 export const useShowProjects = () => {
@@ -57,6 +58,7 @@ export const useShowProjects = () => {
 export const useShowProject = (id) => {
   return useQuery(["show-project", id], project, {
     staleTime: 60000,
+    enabled: false, // we will trigger manually
   });
 };
 
